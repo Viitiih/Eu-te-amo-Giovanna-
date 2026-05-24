@@ -1,212 +1,156 @@
-const STORAGE_KEY = "nosso-cantinho-data-v1";
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Nosso Cantinho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="paper-bg"></div>
 
-const editableLabels = {
-  heroTitle: "Título principal",
-  heroSubtitle: "Subtítulo",
-  heroButton: "Botão principal",
-  photoCaption1: "Legenda foto 1",
-  photoCaption2: "Legenda foto 2",
-  photoCaption3: "Legenda foto 3",
-  photoCaption4: "Legenda foto 4",
-  momentsSubtitle: "Subtítulo dos momentos",
-  moment1Title: "Momento 1",
-  moment1Date: "Data 1",
-  moment2Title: "Momento 2",
-  moment2Date: "Data 2",
-  moment3Title: "Momento 3",
-  moment3Date: "Data 3",
-  moment4Title: "Momento 4",
-  moment4Date: "Data 4",
-  love1: "Coisa que amo 1",
-  love2: "Coisa que amo 2",
-  love3: "Coisa que amo 3",
-  love4: "Coisa que amo 4",
-  love5: "Coisa que amo 5",
-  love6: "Coisa que amo 6",
-  stickyNote: "Bilhetinho roxo",
-  letterText: "Cartinha",
-  signature: "Assinatura",
-  playlistSubtitle: "Texto da playlist",
-  song1Title: "Música 1",
-  song1Artist: "Artista 1",
-  song2Title: "Música 2",
-  song2Artist: "Artista 2",
-  song3Title: "Música 3",
-  song3Artist: "Artista 3",
-  finalTitle: "Título final",
-  finalText: "Texto final",
-  footerText: "Texto do rodapé"
-};
+  <header class="topbar">
+    <div class="brand">♡ Nosso Cantinho</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#momentos">Momentos</a>
+      <a href="#amo">Coisas que amo</a>
+      <a href="#cartinha">Cartinha</a>
+      <a href="#playlist">Playlist</a>
+    </nav>
+    <button id="editToggle" class="love-button">Editar ♡</button>
+  </header>
 
-const linkLabels = {
-  song1Url: "Link da música 1",
-  song2Url: "Link da música 2",
-  song3Url: "Link da música 3"
-};
+  <main id="inicio" class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <span class="mini-heart">♡</span>
+        <h1 data-edit="heroTitle">Nosso Cantinho</h1>
+        <p class="subtitle" data-edit="heroSubtitle">Pequenos momentos, grandes memórias e um amor que só cresce.</p>
+        <a href="#cartinha" class="main-cta" data-edit="heroButton">Esse é só o começo da nossa história →</a>
+      </div>
 
-let currentData = structuredClone(window.SITE_DATA);
+      <div class="photo-collage">
+        <figure class="polaroid p1">
+          <img data-img="photo1" src="assets/photos/foto-1.svg" alt="Foto do casal 1">
+          <figcaption data-edit="photoCaption1">Meu lugar favorito</figcaption>
+        </figure>
+        <figure class="polaroid p2">
+          <img data-img="photo2" src="assets/photos/foto-2.svg" alt="Foto do casal 2">
+          <figcaption data-edit="photoCaption2">Nós dois</figcaption>
+        </figure>
+        <figure class="polaroid p3">
+          <img data-img="photo3" src="assets/photos/foto-3.svg" alt="Foto do casal 3">
+          <figcaption data-edit="photoCaption3">Dia especial</figcaption>
+        </figure>
+        <figure class="polaroid p4">
+          <img data-img="photo4" src="assets/photos/foto-4.svg" alt="Foto do casal 4">
+          <figcaption data-edit="photoCaption4">Pra sempre</figcaption>
+        </figure>
+      </div>
 
-function mergeData(base, override) {
-  return {
-    texts: { ...base.texts, ...(override?.texts || {}) },
-    images: { ...base.images, ...(override?.images || {}) },
-    links: { ...base.links, ...(override?.links || {}) }
-  };
-}
+      <div class="doodle heart-one">♡</div>
+      <div class="doodle heart-two">♡</div>
+      <div class="doodle star-one">✦</div>
+      <div class="doodle arrow">↝</div>
+    </section>
 
-function loadData() {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved) {
-    try {
-      currentData = mergeData(window.SITE_DATA, JSON.parse(saved));
-    } catch {
-      currentData = structuredClone(window.SITE_DATA);
-    }
-  }
-  applyData();
-}
+    <section id="momentos" class="cards-grid">
+      <article class="card moments-card tape-left">
+        <h2>Nossos momentos ♡</h2>
+        <p data-edit="momentsSubtitle">Alguns dos nossos melhores dias juntos até aqui ✨</p>
+        <div class="timeline">
+          <div><span>📅</span><strong data-edit="moment1Title">Primeiro encontro</strong><em data-edit="moment1Date">12/03/2023</em></div>
+          <div><span>💗</span><strong data-edit="moment2Title">Nosso primeiro beijo</strong><em data-edit="moment2Date">25/03/2023</em></div>
+          <div><span>📷</span><strong data-edit="moment3Title">Nossa foto favorita</strong><em data-edit="moment3Date">17/06/2023</em></div>
+          <div><span>🏠</span><strong data-edit="moment4Title">Nosso cantinho</strong><em data-edit="moment4Date">22/01/2024</em></div>
+        </div>
+      </article>
 
-function applyData() {
-  document.querySelectorAll("[data-edit]").forEach((el) => {
-    const key = el.dataset.edit;
-    if (currentData.texts[key] !== undefined) {
-      el.textContent = currentData.texts[key];
-    }
-  });
+      <article id="amo" class="card love-list-card tape-right">
+        <h2>Coisas que eu amo em você ✨</h2>
+        <ul>
+          <li data-edit="love1">Seu sorriso que ilumina tudo</li>
+          <li data-edit="love2">Seu jeito doce e carinhoso</li>
+          <li data-edit="love3">Como você me entende</li>
+          <li data-edit="love4">Seu coração enorme</li>
+          <li data-edit="love5">Nossas conversas sobre tudo e nada</li>
+          <li data-edit="love6">O jeito único que você é</li>
+        </ul>
+        <div class="sticky" data-edit="stickyNote">É tanta coisa que nem cabe aqui... eu amo você inteira! 💜</div>
+      </article>
 
-  document.querySelectorAll("[data-img]").forEach((img) => {
-    const key = img.dataset.img;
-    if (currentData.images[key]) {
-      img.src = currentData.images[key];
-    }
-  });
+      <article id="cartinha" class="card letter-card">
+        <h2>Cartinha 💌</h2>
+        <div class="letter-paper">
+          <p data-edit="letterText">
+            Meu amor, fiz esse cantinho simples pra te lembrar o quanto você é especial pra mim.
+            Você chegou e deixou tudo mais leve, mais bonito e mais meu.
+            Obrigado por existir, por escolher ficar e por fazer dos meus dias os melhores da minha vida.
+            Eu te amo. Hoje, amanhã e sempre.
+          </p>
+          <p class="signature" data-edit="signature">Com todo meu amor, seu amor ♡</p>
+        </div>
+      </article>
 
-  document.querySelectorAll("[data-link]").forEach((link) => {
-    const key = link.dataset.link;
-    if (currentData.links[key]) {
-      link.href = currentData.links[key];
-    }
-  });
-}
+      <article id="playlist" class="card playlist-card tape-purple">
+        <h2>Playlist 🎵</h2>
+        <p data-edit="playlistSubtitle">As músicas que combinam com a nossa história.</p>
+        <div class="songs">
+          <a data-link="song1Url" href="https://open.spotify.com/" target="_blank"><span data-edit="song1Title">Tudo Que Sonhei</span><small data-edit="song1Artist">Vitor Kley</small><b>▶</b></a>
+          <a data-link="song2Url" href="https://open.spotify.com/" target="_blank"><span data-edit="song2Title">A Gente Fez Amor</span><small data-edit="song2Artist">Jorge & Mateus</small><b>▶</b></a>
+          <a data-link="song3Url" href="https://open.spotify.com/" target="_blank"><span data-edit="song3Title">De Janeiro a Janeiro</span><small data-edit="song3Artist">Nando Reis</small><b>▶</b></a>
+        </div>
+      </article>
+    </section>
 
-function saveData() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(currentData));
-  applyData();
-  alert("Salvo neste navegador!");
-}
+    <section class="final-message">
+      <h2 data-edit="finalTitle">Feito com amor, para você. ♡</h2>
+      <p data-edit="finalText">Esse site é simples, mas cada pedacinho dele foi pensado em você.</p>
+    </section>
+  </main>
 
-function buildTextFields() {
-  const fields = document.getElementById("fields");
-  fields.innerHTML = "";
+  <aside id="editorPanel" class="editor-panel" aria-hidden="true">
+    <div class="editor-header">
+      <h3>Editar site</h3>
+      <button id="closeEditor">×</button>
+    </div>
 
-  Object.keys(editableLabels).forEach((key) => {
-    const wrapper = document.createElement("div");
-    wrapper.className = "field";
+    <div class="editor-help">
+      <strong>Como funciona:</strong>
+      <p>Edite textos, troque fotos e links. As alterações ficam salvas neste navegador. Para publicar no GitHub com as mudanças, use “Baixar dados” e substitua o arquivo <code>site-data.json</code>.</p>
+    </div>
 
-    const label = document.createElement("label");
-    label.textContent = editableLabels[key];
+    <div class="editor-actions">
+      <button id="saveData">Salvar</button>
+      <button id="resetData">Restaurar</button>
+      <button id="downloadData">Baixar dados</button>
+    </div>
 
-    const isLong = ["letterText", "heroSubtitle", "finalText", "stickyNote"].includes(key);
-    const input = document.createElement(isLong ? "textarea" : "input");
-    input.value = currentData.texts[key] || "";
-    input.dataset.fieldKey = key;
+    <div id="fields"></div>
 
-    input.addEventListener("input", () => {
-      currentData.texts[key] = input.value;
-      applyData();
-      highlightElement(key);
-    });
+    <h4>Fotos</h4>
+    <div class="photo-editor">
+      <label>Foto 1 <input type="file" accept="image/*" data-upload="photo1"></label>
+      <label>Foto 2 <input type="file" accept="image/*" data-upload="photo2"></label>
+      <label>Foto 3 <input type="file" accept="image/*" data-upload="photo3"></label>
+      <label>Foto 4 <input type="file" accept="image/*" data-upload="photo4"></label>
+    </div>
 
-    wrapper.append(label, input);
-    fields.appendChild(wrapper);
-  });
-}
+    <h4>Links das músicas</h4>
+    <div id="linkFields"></div>
+  </aside>
 
-function buildLinkFields() {
-  const fields = document.getElementById("linkFields");
-  fields.innerHTML = "";
+  <footer>
+    <span>♡</span>
+    <p data-edit="footerText">Você é meu lugar favorito.</p>
+    <span>♡</span>
+  </footer>
 
-  Object.keys(linkLabels).forEach((key) => {
-    const wrapper = document.createElement("div");
-    wrapper.className = "field";
-
-    const label = document.createElement("label");
-    label.textContent = linkLabels[key];
-
-    const input = document.createElement("input");
-    input.className = "link-input";
-    input.value = currentData.links[key] || "";
-    input.placeholder = "Cole o link do Spotify ou YouTube";
-    input.addEventListener("input", () => {
-      currentData.links[key] = input.value;
-      applyData();
-    });
-
-    wrapper.append(label, input);
-    fields.appendChild(wrapper);
-  });
-}
-
-function highlightElement(key) {
-  const el = document.querySelector(`[data-edit="${key}"]`);
-  if (!el) return;
-  el.classList.add("editing");
-  clearTimeout(el._editingTimer);
-  el._editingTimer = setTimeout(() => el.classList.remove("editing"), 650);
-}
-
-function setupUploads() {
-  document.querySelectorAll("[data-upload]").forEach((input) => {
-    input.addEventListener("change", async () => {
-      const file = input.files?.[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        currentData.images[input.dataset.upload] = reader.result;
-        applyData();
-        saveData();
-      };
-      reader.readAsDataURL(file);
-    });
-  });
-}
-
-function downloadDataFile() {
-  const content = `window.SITE_DATA = ${JSON.stringify(currentData, null, 2)};`;
-  const blob = new Blob([content], { type: "application/javascript;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "site-data.js";
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-document.getElementById("editToggle").addEventListener("click", () => {
-  document.getElementById("editorPanel").classList.add("open");
-  document.getElementById("editorPanel").setAttribute("aria-hidden", "false");
-  buildTextFields();
-  buildLinkFields();
-});
-
-document.getElementById("closeEditor").addEventListener("click", () => {
-  document.getElementById("editorPanel").classList.remove("open");
-  document.getElementById("editorPanel").setAttribute("aria-hidden", "true");
-});
-
-document.getElementById("saveData").addEventListener("click", saveData);
-
-document.getElementById("resetData").addEventListener("click", () => {
-  if (!confirm("Tem certeza que quer restaurar o modelo original neste navegador?")) return;
-  localStorage.removeItem(STORAGE_KEY);
-  currentData = structuredClone(window.SITE_DATA);
-  applyData();
-  buildTextFields();
-  buildLinkFields();
-});
-
-document.getElementById("downloadData").addEventListener("click", downloadDataFile);
-
-setupUploads();
-loadData();
+  <script src="site-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
