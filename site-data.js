@@ -1,0 +1,50 @@
+window.SITE_DATA = {
+  texts: {
+    heroTitle: "Nosso Cantinho",
+    heroSubtitle: "Pequenos momentos, grandes memórias e um amor que só cresce.",
+    heroButton: "Esse é só o começo da nossa história →",
+    photoCaption1: "Meu lugar favorito",
+    photoCaption2: "Nós dois",
+    photoCaption3: "Dia especial",
+    photoCaption4: "Pra sempre",
+    momentsSubtitle: "Alguns dos nossos melhores dias juntos até aqui ✨",
+    moment1Title: "Primeiro encontro",
+    moment1Date: "12/03/2023",
+    moment2Title: "Nosso primeiro beijo",
+    moment2Date: "25/03/2023",
+    moment3Title: "Nossa foto favorita",
+    moment3Date: "17/06/2023",
+    moment4Title: "Nosso cantinho",
+    moment4Date: "22/01/2024",
+    love1: "Seu sorriso que ilumina tudo",
+    love2: "Seu jeito doce e carinhoso",
+    love3: "Como você me entende",
+    love4: "Seu coração enorme",
+    love5: "Nossas conversas sobre tudo e nada",
+    love6: "O jeito único que você é",
+    stickyNote: "É tanta coisa que nem cabe aqui... eu amo você inteira! 💜",
+    letterText: "Meu amor, fiz esse cantinho simples pra te lembrar o quanto você é especial pra mim. Você chegou e deixou tudo mais leve, mais bonito e mais meu. Obrigado por existir, por escolher ficar e por fazer dos meus dias os melhores da minha vida. Eu te amo. Hoje, amanhã e sempre.",
+    signature: "Com todo meu amor, seu amor ♡",
+    playlistSubtitle: "As músicas que combinam com a nossa história.",
+    song1Title: "Tudo Que Sonhei",
+    song1Artist: "Vitor Kley",
+    song2Title: "A Gente Fez Amor",
+    song2Artist: "Jorge & Mateus",
+    song3Title: "De Janeiro a Janeiro",
+    song3Artist: "Nando Reis",
+    finalTitle: "Feito com amor, para você. ♡",
+    finalText: "Esse site é simples, mas cada pedacinho dele foi pensado em você.",
+    footerText: "Você é meu lugar favorito."
+  },
+  images: {
+    photo1: "assets/photos/foto-1.svg",
+    photo2: "assets/photos/foto-2.svg",
+    photo3: "assets/photos/foto-3.svg",
+    photo4: "assets/photos/foto-4.svg"
+  },
+  links: {
+    song1Url: "https://open.spotify.com/",
+    song2Url: "https://open.spotify.com/",
+    song3Url: "https://open.spotify.com/"
+  }
+};

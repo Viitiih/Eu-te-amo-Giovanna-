@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosso Cantinho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="paper-bg"></div>
+
+  <header class="topbar">
+    <div class="brand">♡ Nosso Cantinho</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#momentos">Momentos</a>
+      <a href="#amo">Coisas que amo</a>
+      <a href="#cartinha">Cartinha</a>
+      <a href="#playlist">Playlist</a>
+    </nav>
+    <button id="editToggle" class="love-button">Editar ♡</button>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <span class="mini-heart">♡</span>
+        <h1 data-edit="heroTitle">Nosso Cantinho</h1>
+        <p class="subtitle" data-edit="heroSubtitle">Pequenos momentos, grandes memórias e um amor que só cresce.</p>
+        <a href="#cartinha" class="main-cta" data-edit="heroButton">Esse é só o começo da nossa história →</a>
+      </div>
+
+      <div class="photo-collage">
+        <figure class="polaroid p1">
+          <img data-img="photo1" src="assets/photos/foto-1.svg" alt="Foto do casal 1">
+          <figcaption data-edit="photoCaption1">Meu lugar favorito</figcaption>
+        </figure>
+        <figure class="polaroid p2">
+          <img data-img="photo2" src="assets/photos/foto-2.svg" alt="Foto do casal 2">
+          <figcaption data-edit="photoCaption2">Nós dois</figcaption>
+        </figure>
+        <figure class="polaroid p3">
+          <img data-img="photo3" src="assets/photos/foto-3.svg" alt="Foto do casal 3">
+          <figcaption data-edit="photoCaption3">Dia especial</figcaption>
+        </figure>
+        <figure class="polaroid p4">
+          <img data-img="photo4" src="assets/photos/foto-4.svg" alt="Foto do casal 4">
+          <figcaption data-edit="photoCaption4">Pra sempre</figcaption>
+        </figure>
+      </div>
+
+      <div class="doodle heart-one">♡</div>
+      <div class="doodle heart-two">♡</div>
+      <div class="doodle star-one">✦</div>
+      <div class="doodle arrow">↝</div>
+    </section>
+
+    <section id="momentos" class="cards-grid">
+      <article class="card moments-card tape-left">
+        <h2>Nossos momentos ♡</h2>
+        <p data-edit="momentsSubtitle">Alguns dos nossos melhores dias juntos até aqui ✨</p>
+        <div class="timeline">
+          <div><span>📅</span><strong data-edit="moment1Title">Primeiro encontro</strong><em data-edit="moment1Date">12/03/2023</em></div>
+          <div><span>💗</span><strong data-edit="moment2Title">Nosso primeiro beijo</strong><em data-edit="moment2Date">25/03/2023</em></div>
+          <div><span>📷</span><strong data-edit="moment3Title">Nossa foto favorita</strong><em data-edit="moment3Date">17/06/2023</em></div>
+          <div><span>🏠</span><strong data-edit="moment4Title">Nosso cantinho</strong><em data-edit="moment4Date">22/01/2024</em></div>
+        </div>
+      </article>
+
+      <article id="amo" class="card love-list-card tape-right">
+        <h2>Coisas que eu amo em você ✨</h2>
+        <ul>
+          <li data-edit="love1">Seu sorriso que ilumina tudo</li>
+          <li data-edit="love2">Seu jeito doce e carinhoso</li>
+          <li data-edit="love3">Como você me entende</li>
+          <li data-edit="love4">Seu coração enorme</li>
+          <li data-edit="love5">Nossas conversas sobre tudo e nada</li>
+          <li data-edit="love6">O jeito único que você é</li>
+        </ul>
+        <div class="sticky" data-edit="stickyNote">É tanta coisa que nem cabe aqui... eu amo você inteira! 💜</div>
+      </article>
+
+      <article id="cartinha" class="card letter-card">
+        <h2>Cartinha 💌</h2>
+        <div class="letter-paper">
+          <p data-edit="letterText">
+            Meu amor, fiz esse cantinho simples pra te lembrar o quanto você é especial pra mim.
+            Você chegou e deixou tudo mais leve, mais bonito e mais meu.
+            Obrigado por existir, por escolher ficar e por fazer dos meus dias os melhores da minha vida.
+            Eu te amo. Hoje, amanhã e sempre.
+          </p>
+          <p class="signature" data-edit="signature">Com todo meu amor, seu amor ♡</p>
+        </div>
+      </article>
+
+      <article id="playlist" class="card playlist-card tape-purple">
+        <h2>Playlist 🎵</h2>
+        <p data-edit="playlistSubtitle">As músicas que combinam com a nossa história.</p>
+        <div class="songs">
+          <a data-link="song1Url" href="https://open.spotify.com/" target="_blank"><span data-edit="song1Title">Tudo Que Sonhei</span><small data-edit="song1Artist">Vitor Kley</small><b>▶</b></a>
+          <a data-link="song2Url" href="https://open.spotify.com/" target="_blank"><span data-edit="song2Title">A Gente Fez Amor</span><small data-edit="song2Artist">Jorge & Mateus</small><b>▶</b></a>
+          <a data-link="song3Url" href="https://open.spotify.com/" target="_blank"><span data-edit="song3Title">De Janeiro a Janeiro</span><small data-edit="song3Artist">Nando Reis</small><b>▶</b></a>
+        </div>
+      </article>
+    </section>
+
+    <section class="final-message">
+      <h2 data-edit="finalTitle">Feito com amor, para você. ♡</h2>
+      <p data-edit="finalText">Esse site é simples, mas cada pedacinho dele foi pensado em você.</p>
+    </section>
+  </main>
+
+  <aside id="editorPanel" class="editor-panel" aria-hidden="true">
+    <div class="editor-header">
+      <h3>Editar site</h3>
+      <button id="closeEditor">×</button>
+    </div>
+
+    <div class="editor-help">
+      <strong>Como funciona:</strong>
+      <p>Edite textos, troque fotos e links. As alterações ficam salvas neste navegador. Para publicar no GitHub com as mudanças, use “Baixar dados” e substitua o arquivo <code>site-data.json</code>.</p>
+    </div>
+
+    <div class="editor-actions">
+      <button id="saveData">Salvar</button>
+      <button id="resetData">Restaurar</button>
+      <button id="downloadData">Baixar dados</button>
+    </div>
+
+    <div id="fields"></div>
+
+    <h4>Fotos</h4>
+    <div class="photo-editor">
+      <label>Foto 1 <input type="file" accept="image/*" data-upload="photo1"></label>
+      <label>Foto 2 <input type="file" accept="image/*" data-upload="photo2"></label>
+      <label>Foto 3 <input type="file" accept="image/*" data-upload="photo3"></label>
+      <label>Foto 4 <input type="file" accept="image/*" data-upload="photo4"></label>
+    </div>
+
+    <h4>Links das músicas</h4>
+    <div id="linkFields"></div>
+  </aside>
+
+  <footer>
+    <span>♡</span>
+    <p data-edit="footerText">Você é meu lugar favorito.</p>
+    <span>♡</span>
+  </footer>
+
+  <script src="site-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
