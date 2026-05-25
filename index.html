@@ -1,14 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffd6a5"/>
-      <stop offset="1" stop-color="#f7a9bb"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="600" fill="url(#g)"/>
-  <circle cx="300" cy="245" r="72" fill="#fff7ef" opacity=".9"/>
-  <circle cx="500" cy="245" r="72" fill="#fff7ef" opacity=".9"/>
-  <path d="M260 380 C310 320, 375 320, 400 385 C425 320, 490 320, 540 380 C515 455, 435 500, 400 520 C365 500, 285 455, 260 380Z" fill="#d84d76" opacity=".85"/>
-  <text x="400" y="112" font-family="Arial, sans-serif" font-size="42" fill="#fff" text-anchor="middle" font-weight="700">Foto 3</text>
-  <text x="400" y="570" font-family="Arial, sans-serif" font-size="26" fill="#fff" text-anchor="middle">troque esta imagem no editor</text>
-</svg>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Nosso Diário do Tempo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+  <div class="bg-paper"></div>
+  <header class="topbar">
+    <a href="#inicio" class="brand">♡ Diário do Tempo</a>
+    <nav>
+      <a href="#viagem">Viagem</a>
+      <button id="openMapBtn" type="button">Escolher uma data</button>
+      <button id="continueBtnTop" type="button">Continuar</button>
+      <button id="openEditorBtn" type="button" class="edit-nav">Editar</button>
+    </nav>
+  </header>
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">uma viagem pela nossa história</span>
+        <h1 id="siteTitle">Nosso Diário do Tempo</h1>
+        <p id="siteSubtitle">Algumas lembranças não cabem só na memória. Então eu resolvi guardar aqui um pedacinho da nossa história.</p>
+        <div id="returnBox" class="return-box hidden">
+          <span>💌 Bem-vinda de volta</span>
+          <strong id="lastSeenTitle">Você parou em uma lembrança especial.</strong>
+          <div class="return-actions">
+            <button id="continueBtnHero" type="button">Continuar de onde parei</button>
+            <button id="startOverBtn" type="button">Começar do início</button>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#viagem" class="primary-action">Começar a viagem ✈</a>
+          <button id="openMapBtnHero" type="button" class="secondary-action">Escolher uma data</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating-polaroid one"><img src="assets/photos/memoria-1.svg" alt=""><span>o começo</span></div>
+        <div class="floating-polaroid two"><img src="assets/photos/memoria-2.svg" alt=""><span>nós dois</span></div>
+        <div class="paper-plane">✈</div><div class="plane-trail"></div>
+      </div>
+    </section>
+    <section id="viagem" class="journey-intro"><span>✦</span><h2>Voltando no tempo...</h2><p>Cada parada nessa viagem guarda um momento, uma lembrança e um pedacinho do que fez tudo isso ser tão especial.</p></section>
+    <section class="timeline-shell"><div class="timeline-line" aria-hidden="true"><div class="line"></div><div id="scrollPlane" class="scroll-plane">✈</div></div><div id="memoriesList" class="memories-list"></div></section>
+    <section class="ending"><span>♡</span><h2 id="endingTitle">Essa viagem termina aqui... por enquanto.</h2><p id="endingText">Mas a nossa história continua sendo escrita, memória por memória, dia após dia.</p></section>
+  </main>
+  <div id="mapModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="mapTitle"><div class="modal-card"><div class="modal-header"><div><span class="eyebrow">mapa da viagem</span><h2 id="mapTitle">Escolher uma data</h2></div><button id="closeMapBtn" type="button" class="icon-btn">×</button></div><input id="mapSearch" class="search-input" type="search" placeholder="Buscar por data, título ou palavra..." /><div id="mapList" class="map-list"></div></div></div>
+  <aside id="editorPanel" class="editor-panel" aria-hidden="true"><div class="editor-head"><div><span class="eyebrow">modo editor</span><h2>Editar diário</h2></div><button id="closeEditorBtn" type="button" class="icon-btn">×</button></div><div class="editor-alert">As alterações ficam salvas neste navegador. Para publicar no GitHub, clique em <strong>Exportar diário</strong> e substitua o arquivo <code>diario-data.js</code>.</div><div class="editor-actions"><button id="addMemoryBtn" type="button">Adicionar memória</button><button id="exportDataBtn" type="button">Exportar diário</button><button id="resetDataBtn" type="button">Restaurar modelo</button></div><form id="memoryForm" class="memory-form hidden"><input type="hidden" id="memoryId"><label>Título do momento<input id="memoryTitle" type="text" placeholder="Ex: O começo de tudo" required></label><label>Data<input id="memoryDate" type="date" required></label><label>Data escrita<input id="memoryDateLabel" type="text" placeholder="Ex: 12 de março de 2024"></label><label>Texto da memória<textarea id="memoryText" placeholder="Conte esse momento como se estivesse voltando no tempo..." required></textarea></label><label>Frase final<input id="memoryQuote" type="text" placeholder="Ex: Foi ali que tudo começou."></label><label>Link da música<input id="memorySong" type="url" placeholder="https://open.spotify.com/track/..."></label><label>Fotos da memória<input id="memoryPhotos" type="file" accept="image/*" multiple><small>Você pode selecionar uma ou mais fotos. Elas serão salvas dentro do arquivo exportado.</small></label><div id="currentPhotos" class="current-photos"></div><div class="form-actions"><button type="submit">Salvar memória</button><button id="cancelEditBtn" type="button">Cancelar</button></div></form><div id="editorList" class="editor-list"></div></aside>
+  <template id="memoryTemplate"><article class="memory-card"><div class="memory-marker">♡</div><div class="memory-content"><span class="memory-date"></span><h3></h3><div class="memory-photos"></div><p class="memory-text"></p><blockquote></blockquote><a class="song-link" href="#" target="_blank" rel="noopener">Ouvir a música desse momento ♫</a></div></article></template>
+  <script src="diario-data.js?v=1"></script><script src="script.js?v=1"></script>
+</body>
+</html>

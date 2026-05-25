@@ -1,14 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#bde0fe"/>
-      <stop offset="1" stop-color="#ffc8dd"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="600" fill="url(#g)"/>
-  <circle cx="300" cy="245" r="72" fill="#fff7ef" opacity=".9"/>
-  <circle cx="500" cy="245" r="72" fill="#fff7ef" opacity=".9"/>
-  <path d="M260 380 C310 320, 375 320, 400 385 C425 320, 490 320, 540 380 C515 455, 435 500, 400 520 C365 500, 285 455, 260 380Z" fill="#d84d76" opacity=".85"/>
-  <text x="400" y="112" font-family="Arial, sans-serif" font-size="42" fill="#fff" text-anchor="middle" font-weight="700">Foto 4</text>
-  <text x="400" y="570" font-family="Arial, sans-serif" font-size="26" fill="#fff" text-anchor="middle">troque esta imagem no editor</text>
-</svg>
+# Nosso Diário do Tempo
+
+Site romântico em formato de jornada vertical, com linha do tempo emocional, aviãozinho, mapa de datas e botão "continuar de onde parei".
+
+## Como editar
+
+1. Abra `index.html` no navegador.
+2. Clique em **Editar**.
+3. Clique em **Adicionar memória**.
+4. Preencha título, data, texto, frase final, música e fotos.
+5. Clique em **Salvar memória**.
+
+## Como publicar as alterações
+
+As alterações ficam salvas no navegador usando `localStorage`.
+
+Para publicar no GitHub:
+
+1. Clique em **Exportar diário**.
+2. O navegador vai baixar `diario-data.js`.
+3. Substitua o `diario-data.js` antigo no GitHub por esse novo.
+4. Faça commit.
+5. Aguarde o GitHub Pages atualizar.
+
+## Observação sobre fotos
+
+As fotos adicionadas pelo editor entram no arquivo exportado `diario-data.js` como base64. Isso é prático, mas muitas fotos pesadas podem deixar o arquivo grande. Reduza as fotos antes de inserir se o diário crescer muito.
